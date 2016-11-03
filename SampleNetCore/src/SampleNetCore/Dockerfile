@@ -1,9 +1,11 @@
 FROM microsoft/dotnet:latest
 # was :1.0.0-core
-COPY . /app
+RUN mkdir -p /app
+COPY src/SampleNetCore /app
 WORKDIR /app
-RUN ["dotnet", "restore"]
-RUN ["dotnet", "build"]
+
+RUN dotnet restore
+RUN dotnet build
 
 ENV ASPNETCORE_URLS http://*:80
 EXPOSE 80
