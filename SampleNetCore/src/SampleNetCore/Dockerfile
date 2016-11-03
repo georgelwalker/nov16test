@@ -1,7 +1,7 @@
 FROM microsoft/dotnet:1.0.0-core
 # was :1.0.0-core
 RUN mkdir -p /app
-COPY src/SampleNetCore /app
+COPY . /app
 WORKDIR /app
 
 RUN dotnet restore
