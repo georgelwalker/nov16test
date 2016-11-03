@@ -10,5 +10,4 @@ RUN dotnet build
 ENV ASPNETCORE_URLS http://*:80
 EXPOSE 80
 #ENTRYPOINT ["dotnet", "bin/Debug/netcoreapp1.0/SampleNetCore.dll"]
-#ENTRYPOINT ["dotnet", "run"]
-ENTRYPOINT ["dotnet", "SampleNetCore.dll"]
+ENTRYPOINT ["dotnet", "run"]
