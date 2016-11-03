@@ -6,6 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SampleNetCore.Controllers
 {
+    [Route ("/")]
+    public class SampleController : Controller
+    {
+        [HttpGet]
+        public string Get()
+        {
+            return "Hello World from ASP.NET CORE";
+        }
+    }
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
