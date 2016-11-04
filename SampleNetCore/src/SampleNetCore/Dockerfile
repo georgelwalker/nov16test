@@ -7,7 +7,7 @@ WORKDIR /app
 RUN dotnet restore
 RUN dotnet build
 
-ENV ASPNETCORE_URLS http://*:80
-EXPOSE 80
+ENV ASPNETCORE_URLS http://*:8080
+EXPOSE 8080
 #ENTRYPOINT ["dotnet", "bin/Debug/netcoreapp1.0/SampleNetCore.dll"]
 ENTRYPOINT ["dotnet", "run"]
