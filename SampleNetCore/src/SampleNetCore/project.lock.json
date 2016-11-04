@@ -685,6 +685,22 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.Server.Kestrel.dll": {}
         }
       },
+      "Microsoft.AspNetCore.StaticFiles/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.WebEncoders": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.WebUtilities/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1019,6 +1035,19 @@
         },
         "runtime": {
           "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.dll": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "1.0.0",
+          "System.Runtime.Extensions": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Physical/1.0.0": {
@@ -1522,6 +1551,31 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
+      "NJsonSchema/5.12.6149.949": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/NJsonSchema.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/NJsonSchema.dll": {}
+        }
+      },
+      "NJsonSchema.CodeGeneration/5.12.6149.950": {
+        "type": "package",
+        "dependencies": {
+          "NJsonSchema": "5.12.6149.949",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/NJsonSchema.CodeGeneration.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/NJsonSchema.CodeGeneration.dll": {}
+        }
+      },
       "Node.js/0.10.26.1": {
         "type": "package"
       },
@@ -1536,6 +1590,61 @@
         "dependencies": {
           "NoGit": "0.0.5",
           "Node.js": "0.10.26.1"
+        }
+      },
+      "NSwag.Annotations/6.21.6150.29666": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "compile": {
+          "lib/netstandard1.0/NSwag.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/NSwag.Annotations.dll": {}
+        }
+      },
+      "NSwag.AspNetCore/6.21.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+          "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+          "Microsoft.Extensions.FileProviders.Embedded": "1.0.0",
+          "NSwag.Annotations": "6.21.6150.29666",
+          "NSwag.CodeGeneration": "6.21.6150.29666",
+          "System.IO.FileSystem": "4.0.1",
+          "System.Xml.XPath.XDocument": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/NSwag.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/NSwag.AspNetCore.dll": {}
+        }
+      },
+      "NSwag.CodeGeneration/6.21.6150.29666": {
+        "type": "package",
+        "dependencies": {
+          "NJsonSchema.CodeGeneration": "5.12.6149.950",
+          "NSwag.Core": "6.21.6150.29665"
+        },
+        "compile": {
+          "lib/netstandard1.0/NSwag.CodeGeneration.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/NSwag.CodeGeneration.dll": {}
+        }
+      },
+      "NSwag.Core/6.21.6150.29665": {
+        "type": "package",
+        "dependencies": {
+          "NJsonSchema": "5.12.6149.949"
+        },
+        "compile": {
+          "lib/netstandard1.0/NSwag.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/NSwag.Core.dll": {}
         }
       },
       "react.js/0.14.7": {
@@ -3426,7 +3535,7 @@
           "System.Xml.ReaderWriter": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Xml.XPath.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.dll": {}
@@ -3446,7 +3555,7 @@
           "System.Xml.XPath": "4.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
@@ -5139,6 +5248,19 @@
         "lib/netstandard1.3/Microsoft.AspNetCore.Server.Kestrel.xml"
       ]
     },
+    "Microsoft.AspNetCore.StaticFiles/1.0.0": {
+      "sha512": "pXiUBJtpO0fIlGEg/ESykhbIZ2+I+9Y+3qXzN19zZDDF+tD88eATg3A5MHMXu/VmqaROLfvpGJmJ6uOLUGsBVQ==",
+      "type": "package",
+      "path": "Microsoft.AspNetCore.StaticFiles/1.0.0",
+      "files": [
+        "Microsoft.AspNetCore.StaticFiles.1.0.0.nupkg.sha512",
+        "Microsoft.AspNetCore.StaticFiles.nuspec",
+        "lib/net451/Microsoft.AspNetCore.StaticFiles.dll",
+        "lib/net451/Microsoft.AspNetCore.StaticFiles.xml",
+        "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll",
+        "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.xml"
+      ]
+    },
     "Microsoft.AspNetCore.WebUtilities/1.0.0": {
       "sha512": "D0licSnS1JgqQ/gYlN41wXbeYG3dFIdjY781YzMHZ5gBB7kczacshW+H6plZkXRr/cCnAJWGa31o1R8c5GEy/A==",
       "type": "package",
@@ -5433,6 +5555,17 @@
         "Microsoft.Extensions.FileProviders.Composite.nuspec",
         "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.dll",
         "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.xml"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/1.0.0": {
+      "sha512": "mMCI3/BLXAyBCDneqOI4ohETd0IXjbXZdoiCm1dYdnOdV193ByEOCFQ6/Vn9RVdU5UlC4Nn1P4J5Df7pXG/vGg==",
+      "type": "package",
+      "path": "Microsoft.Extensions.FileProviders.Embedded/1.0.0",
+      "files": [
+        "Microsoft.Extensions.FileProviders.Embedded.1.0.0.nupkg.sha512",
+        "Microsoft.Extensions.FileProviders.Embedded.nuspec",
+        "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.xml"
       ]
     },
     "Microsoft.Extensions.FileProviders.Physical/1.0.0": {
@@ -5875,6 +6008,46 @@
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
         "tools/install.ps1"
+      ]
+    },
+    "NJsonSchema/5.12.6149.949": {
+      "sha512": "uKPj8+YoMUMCGa7urfJVXCT+XgQ+wfkopXSwAamCxFOwza5PlRCvpFpC+8BhwJqNC4p+gRhgbDP1gSwoPonTGw==",
+      "type": "package",
+      "path": "NJsonSchema/5.12.6149.949",
+      "files": [
+        "NJsonSchema.5.12.6149.949.nupkg.sha512",
+        "NJsonSchema.nuspec",
+        "lib/net40/NJsonSchema.dll",
+        "lib/net40/NJsonSchema.pdb",
+        "lib/net40/NJsonSchema.xml",
+        "lib/net45/NJsonSchema.dll",
+        "lib/net45/NJsonSchema.pdb",
+        "lib/net45/NJsonSchema.xml",
+        "lib/netstandard1.0/NJsonSchema.dll",
+        "lib/netstandard1.0/NJsonSchema.pdb",
+        "lib/netstandard1.0/NJsonSchema.xml",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NJsonSchema.dll",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NJsonSchema.pdb",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NJsonSchema.xml",
+        "lib/portable45-net45+win8+wp8+wpa81/NJsonSchema.dll",
+        "lib/portable45-net45+win8+wp8+wpa81/NJsonSchema.xml"
+      ]
+    },
+    "NJsonSchema.CodeGeneration/5.12.6149.950": {
+      "sha512": "4mf/ErJrG8PhWx9ktSDoNuJ3fiwq/vRz7w1m3hXXHbAnX+eHiEi9sL0m+6dRBxOasHYwLlRQWkhzeqxP8QCZnQ==",
+      "type": "package",
+      "path": "NJsonSchema.CodeGeneration/5.12.6149.950",
+      "files": [
+        "NJsonSchema.CodeGeneration.5.12.6149.950.nupkg.sha512",
+        "NJsonSchema.CodeGeneration.nuspec",
+        "lib/netstandard1.0/NJsonSchema.CodeGeneration.dll",
+        "lib/netstandard1.0/NJsonSchema.CodeGeneration.pdb",
+        "lib/netstandard1.0/NJsonSchema.CodeGeneration.xml",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NJsonSchema.CodeGeneration.dll",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NJsonSchema.CodeGeneration.pdb",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NJsonSchema.CodeGeneration.xml",
+        "lib/portable45-net45+win8+wp8+wpa81/NJsonSchema.CodeGeneration.dll",
+        "lib/portable45-net45+win8+wp8+wpa81/NJsonSchema.CodeGeneration.xml"
       ]
     },
     "Node.js/0.10.26.1": {
@@ -6572,6 +6745,70 @@
         "tools/bin_tools.ps1",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "NSwag.Annotations/6.21.6150.29666": {
+      "sha512": "rxhnGbKC1iBtZywkSmfj4MashXPAOO/4WmHUSkoVI/oBO6zam/uCzMi91BrA14WLhffwn3aT9ttpXnHCF2n0qg==",
+      "type": "package",
+      "path": "NSwag.Annotations/6.21.6150.29666",
+      "files": [
+        "NSwag.Annotations.6.21.6150.29666.nupkg.sha512",
+        "NSwag.Annotations.nuspec",
+        "lib/netstandard1.0/NSwag.Annotations.dll",
+        "lib/netstandard1.0/NSwag.Annotations.pdb",
+        "lib/netstandard1.0/NSwag.Annotations.xml",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.Annotations.dll",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.Annotations.pdb",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.Annotations.xml",
+        "lib/portable45-net45+win8+wp8+wpa81/NSwag.Annotations.dll",
+        "lib/portable45-net45+win8+wp8+wpa81/NSwag.Annotations.xml"
+      ]
+    },
+    "NSwag.AspNetCore/6.21.0": {
+      "sha512": "9mzh/JoS3Mik8zF+UoyctGrN5wIEaiozcHulVoHy3xEEAFkDut8dtH6xKAs3S2v9vRmMcR9DaVOhFnf+u7YdzQ==",
+      "type": "package",
+      "path": "NSwag.AspNetCore/6.21.0",
+      "files": [
+        "NSwag.AspNetCore.6.21.0.nupkg.sha512",
+        "NSwag.AspNetCore.nuspec",
+        "lib/net451/NSwag.AspNetCore.dll",
+        "lib/net451/NSwag.AspNetCore.xml",
+        "lib/netstandard1.6/NSwag.AspNetCore.dll",
+        "lib/netstandard1.6/NSwag.AspNetCore.xml"
+      ]
+    },
+    "NSwag.CodeGeneration/6.21.6150.29666": {
+      "sha512": "5aO/gXuW5fdYpoZkzi7mUrlKpHp3e6FySuHJZWF7PGJxnH9LgJWAkvMIsMI8u06J+HrtroNIszmUZ455CHZq0Q==",
+      "type": "package",
+      "path": "NSwag.CodeGeneration/6.21.6150.29666",
+      "files": [
+        "NSwag.CodeGeneration.6.21.6150.29666.nupkg.sha512",
+        "NSwag.CodeGeneration.nuspec",
+        "lib/netstandard1.0/NSwag.CodeGeneration.dll",
+        "lib/netstandard1.0/NSwag.CodeGeneration.pdb",
+        "lib/netstandard1.0/NSwag.CodeGeneration.xml",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.CodeGeneration.dll",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.CodeGeneration.pdb",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.CodeGeneration.xml",
+        "lib/portable45-net45+win8+wp8+wpa81/NSwag.CodeGeneration.dll",
+        "lib/portable45-net45+win8+wp8+wpa81/NSwag.CodeGeneration.xml"
+      ]
+    },
+    "NSwag.Core/6.21.6150.29665": {
+      "sha512": "z9fC7MOG1lzG+GAFVwcVT+JPzTinc4gtRixFp3Ro9UPJ0sfJIoOjUnQnGZrcQXeW/WljQEtLO9vcveQLRunHQA==",
+      "type": "package",
+      "path": "NSwag.Core/6.21.6150.29665",
+      "files": [
+        "NSwag.Core.6.21.6150.29665.nupkg.sha512",
+        "NSwag.Core.nuspec",
+        "lib/netstandard1.0/NSwag.Core.dll",
+        "lib/netstandard1.0/NSwag.Core.pdb",
+        "lib/netstandard1.0/NSwag.Core.xml",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.Core.dll",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.Core.pdb",
+        "lib/portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10/NSwag.Core.xml",
+        "lib/portable45-net45+win8+wp8+wpa81/NSwag.Core.dll",
+        "lib/portable45-net45+win8+wp8+wpa81/NSwag.Core.xml"
       ]
     },
     "react.js/0.14.7": {
@@ -12158,6 +12395,7 @@
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.1",
+      "NSwag.AspNetCore >= 6.21.0",
       "Yeoman >= 1.1.2",
       "react.js >= 0.14.7"
     ],

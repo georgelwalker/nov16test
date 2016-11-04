@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "b51bda2bc3218330ddf7d5dc2cd7ad4a78ac9a25"
+    "signature": "4d018b80cc72796045d46cef0b259576e21f9168"
   },
   "compilationOptions": {
     "defines": [
@@ -30,7 +30,9 @@
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "Yeoman": "1.1.2",
-          "react.js": "0.14.7"
+          "react.js": "0.14.7",
+          "Microsoft.AspNetCore.Antiforgery": "1.0.1",
+          "NSwag.AspNetCore": "6.21.0"
         },
         "runtime": {
           "SampleNetCore.dll": {}
@@ -643,6 +645,21 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.Server.Kestrel.dll": {}
         }
       },
+      "Microsoft.AspNetCore.StaticFiles/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.WebEncoders": "1.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.WebUtilities/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "1.0.0",
@@ -858,6 +875,18 @@
         },
         "compile": {
           "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.dll": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "1.0.0",
+          "System.Runtime.Extensions": "4.1.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Physical/1.0.0": {
@@ -1133,6 +1162,29 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
+      "NJsonSchema/5.12.6149.949": {
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/NJsonSchema.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/NJsonSchema.dll": {}
+        }
+      },
+      "NJsonSchema.CodeGeneration/5.12.6149.950": {
+        "dependencies": {
+          "NJsonSchema": "5.12.6149.949",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/NJsonSchema.CodeGeneration.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/NJsonSchema.CodeGeneration.dll": {}
+        }
+      },
       "Node.js/0.10.26.1": {},
       "NoGit/0.0.5": {
         "dependencies": {
@@ -1143,6 +1195,57 @@
         "dependencies": {
           "NoGit": "0.0.5",
           "Node.js": "0.10.26.1"
+        }
+      },
+      "NSwag.Annotations/6.21.6150.29666": {
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/NSwag.Annotations.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/NSwag.Annotations.dll": {}
+        }
+      },
+      "NSwag.AspNetCore/6.21.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
+          "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+          "Microsoft.Extensions.FileProviders.Embedded": "1.0.0",
+          "NSwag.Annotations": "6.21.6150.29666",
+          "NSwag.CodeGeneration": "6.21.6150.29666",
+          "System.IO.FileSystem": "4.0.1",
+          "System.Xml.XPath.XDocument": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/NSwag.AspNetCore.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/NSwag.AspNetCore.dll": {}
+        }
+      },
+      "NSwag.CodeGeneration/6.21.6150.29666": {
+        "dependencies": {
+          "NJsonSchema.CodeGeneration": "5.12.6149.950",
+          "NSwag.Core": "6.21.6150.29665"
+        },
+        "runtime": {
+          "lib/netstandard1.0/NSwag.CodeGeneration.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/NSwag.CodeGeneration.dll": {}
+        }
+      },
+      "NSwag.Core/6.21.6150.29665": {
+        "dependencies": {
+          "NJsonSchema": "5.12.6149.949"
+        },
+        "runtime": {
+          "lib/netstandard1.0/NSwag.Core.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/NSwag.Core.dll": {}
         }
       },
       "react.js/0.14.7": {},
@@ -2882,6 +2985,9 @@
           "System.Threading": "4.0.11",
           "System.Xml.ReaderWriter": "4.0.11"
         },
+        "compile": {
+          "ref/netstandard1.3/System.Xml.XPath.dll": {}
+        },
         "compileOnly": true
       },
       "System.Xml.XPath.XDocument/4.0.1": {
@@ -2895,6 +3001,9 @@
           "System.Xml.ReaderWriter": "4.0.11",
           "System.Xml.XDocument": "4.0.11",
           "System.Xml.XPath": "4.0.1"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         },
         "compileOnly": true
       }
@@ -3096,6 +3205,11 @@
       "serviceable": true,
       "sha512": "sha512-GrTVDsRR6j2WrrTuNsZkG1R8aV1UbsA8TKUD+MKVSpXIoEpQNryCT181Zu94CARowQwFQdW4Q1DwfO4FdAhXiQ=="
     },
+    "Microsoft.AspNetCore.StaticFiles/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pXiUBJtpO0fIlGEg/ESykhbIZ2+I+9Y+3qXzN19zZDDF+tD88eATg3A5MHMXu/VmqaROLfvpGJmJ6uOLUGsBVQ=="
+    },
     "Microsoft.AspNetCore.WebUtilities/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3170,6 +3284,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-4nbDQfagNr1eILXSFZbTNuAKuZ6SsOyK6ySTMryo67ECi8+EcZBQ12E0aXcxX/aT3v+3pbWSt71NXlEm8tKIxw=="
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mMCI3/BLXAyBCDneqOI4ohETd0IXjbXZdoiCm1dYdnOdV193ByEOCFQ6/Vn9RVdU5UlC4Nn1P4J5Df7pXG/vGg=="
     },
     "Microsoft.Extensions.FileProviders.Physical/1.0.0": {
       "type": "package",
@@ -3256,6 +3375,16 @@
       "serviceable": true,
       "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw=="
     },
+    "NJsonSchema/5.12.6149.949": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uKPj8+YoMUMCGa7urfJVXCT+XgQ+wfkopXSwAamCxFOwza5PlRCvpFpC+8BhwJqNC4p+gRhgbDP1gSwoPonTGw=="
+    },
+    "NJsonSchema.CodeGeneration/5.12.6149.950": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4mf/ErJrG8PhWx9ktSDoNuJ3fiwq/vRz7w1m3hXXHbAnX+eHiEi9sL0m+6dRBxOasHYwLlRQWkhzeqxP8QCZnQ=="
+    },
     "Node.js/0.10.26.1": {
       "type": "package",
       "serviceable": true,
@@ -3270,6 +3399,26 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-0dnl7VxZdbGs0a693ao+MumdyygMWfVF+kudxIDdO3rdEOoowDEC4rJvTkrOcd3ESw1C0SToEgfLtmUISjuPXQ=="
+    },
+    "NSwag.Annotations/6.21.6150.29666": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rxhnGbKC1iBtZywkSmfj4MashXPAOO/4WmHUSkoVI/oBO6zam/uCzMi91BrA14WLhffwn3aT9ttpXnHCF2n0qg=="
+    },
+    "NSwag.AspNetCore/6.21.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9mzh/JoS3Mik8zF+UoyctGrN5wIEaiozcHulVoHy3xEEAFkDut8dtH6xKAs3S2v9vRmMcR9DaVOhFnf+u7YdzQ=="
+    },
+    "NSwag.CodeGeneration/6.21.6150.29666": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5aO/gXuW5fdYpoZkzi7mUrlKpHp3e6FySuHJZWF7PGJxnH9LgJWAkvMIsMI8u06J+HrtroNIszmUZ455CHZq0Q=="
+    },
+    "NSwag.Core/6.21.6150.29665": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z9fC7MOG1lzG+GAFVwcVT+JPzTinc4gtRixFp3Ro9UPJ0sfJIoOjUnQnGZrcQXeW/WljQEtLO9vcveQLRunHQA=="
     },
     "react.js/0.14.7": {
       "type": "package",
