@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SampleNetCore.Models;
 
 namespace SampleNetCore.Controllers
 {
-    [Route ("/")]
-    public class SampleController : Controller
+
+    [Route("Vehicles")]
+    public class VehicleController : Controller
     {
         [HttpGet]
-        public string Get()
+        public IEnumerable<Vehicle> Get()
         {
-            return "Hello World from ASP.NET CORE";
+            Vehicle v = new Models.Vehicle();
+            v.display_name = "Large Bus";
+            v.vehicle_id = 1;
+            v.description = "Large school bus";
+            return new Vehicle[] { v };
         }
     }
+
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {

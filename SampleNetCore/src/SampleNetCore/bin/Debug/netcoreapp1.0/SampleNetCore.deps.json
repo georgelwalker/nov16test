@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "4d018b80cc72796045d46cef0b259576e21f9168"
+    "signature": "f9aaf214b3add50a2564ae2afefcc7ae2d465d13"
   },
   "compilationOptions": {
     "defines": [
@@ -32,7 +32,8 @@
           "Yeoman": "1.1.2",
           "react.js": "0.14.7",
           "Microsoft.AspNetCore.Antiforgery": "1.0.1",
-          "NSwag.AspNetCore": "6.21.0"
+          "Microsoft.AspNetCore.Mvc.WebApiCompatShim": "1.0.1",
+          "Swashbuckle": "6.0.0-beta901"
         },
         "runtime": {
           "SampleNetCore.dll": {}
@@ -51,6 +52,18 @@
         "dependencies": {
           "Node.js": "0.10.26.1",
           "Npm": "1.4.4"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.2": {
+        "dependencies": {
+          "Microsoft.Net.Http": "2.2.22",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
+        },
+        "compile": {
+          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.0.1": {
@@ -530,6 +543,23 @@
           "lib/netstandard1.6/Microsoft.AspNetCore.Mvc.ViewFeatures.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Mvc.WebApiCompatShim/1.0.1": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.2",
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.1",
+          "Microsoft.AspNetCore.WebUtilities": "1.0.0",
+          "System.Net.Http": "4.1.0",
+          "System.Runtime.Serialization.Xml": "4.1.1",
+          "System.Xml.XmlSerializer": "4.0.11"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Microsoft.AspNetCore.Mvc.WebApiCompatShim.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/Microsoft.AspNetCore.Mvc.WebApiCompatShim.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Razor/1.0.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.0.11",
@@ -676,6 +706,12 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.WebUtilities.dll": {}
         }
       },
+      "Microsoft.Bcl/1.1.9": {
+        "dependencies": {
+          "Microsoft.Bcl.Build": "1.0.14"
+        }
+      },
+      "Microsoft.Bcl.Build/1.0.14": {},
       "Microsoft.DotNet.InternalAbstractions/1.0.0": {
         "dependencies": {
           "System.AppContext": "4.1.0",
@@ -1112,6 +1148,20 @@
           "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll": {}
         }
       },
+      "Microsoft.Net.Http/2.2.22": {
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.9",
+          "Microsoft.Bcl.Build": "1.0.14"
+        },
+        "runtime": {
+          "lib/portable-net45+win8/System.Net.Http.Extensions.dll": {},
+          "lib/portable-net45+win8/System.Net.Http.Primitives.dll": {}
+        },
+        "compile": {
+          "lib/portable-net45+win8/System.Net.Http.Extensions.dll": {},
+          "lib/portable-net45+win8/System.Net.Http.Primitives.dll": {}
+        }
+      },
       "Microsoft.Net.Http.Headers/1.0.0": {
         "dependencies": {
           "System.Buffers": "4.0.0",
@@ -1162,29 +1212,6 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
-      "NJsonSchema/5.12.6149.949": {
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "runtime": {
-          "lib/netstandard1.0/NJsonSchema.dll": {}
-        },
-        "compile": {
-          "lib/netstandard1.0/NJsonSchema.dll": {}
-        }
-      },
-      "NJsonSchema.CodeGeneration/5.12.6149.950": {
-        "dependencies": {
-          "NJsonSchema": "5.12.6149.949",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "runtime": {
-          "lib/netstandard1.0/NJsonSchema.CodeGeneration.dll": {}
-        },
-        "compile": {
-          "lib/netstandard1.0/NJsonSchema.CodeGeneration.dll": {}
-        }
-      },
       "Node.js/0.10.26.1": {},
       "NoGit/0.0.5": {
         "dependencies": {
@@ -1197,58 +1224,54 @@
           "Node.js": "0.10.26.1"
         }
       },
-      "NSwag.Annotations/6.21.6150.29666": {
+      "react.js/0.14.7": {},
+      "Swashbuckle/6.0.0-beta901": {
         "dependencies": {
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "runtime": {
-          "lib/netstandard1.0/NSwag.Annotations.dll": {}
-        },
-        "compile": {
-          "lib/netstandard1.0/NSwag.Annotations.dll": {}
+          "Swashbuckle.SwaggerGen": "6.0.0-beta901",
+          "Swashbuckle.SwaggerUi": "6.0.0-beta901"
         }
       },
-      "NSwag.AspNetCore/6.21.0": {
+      "Swashbuckle.Swagger/6.0.0-beta901": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.Swagger.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.SwaggerGen/6.0.0-beta901": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "1.0.1",
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.1",
+          "Swashbuckle.Swagger": "6.0.0-beta901",
+          "System.Xml.XPath": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.SwaggerGen.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.SwaggerUi/6.0.0-beta901": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
           "Microsoft.AspNetCore.StaticFiles": "1.0.0",
           "Microsoft.Extensions.FileProviders.Embedded": "1.0.0",
-          "NSwag.Annotations": "6.21.6150.29666",
-          "NSwag.CodeGeneration": "6.21.6150.29666",
-          "System.IO.FileSystem": "4.0.1",
-          "System.Xml.XPath.XDocument": "4.0.1"
+          "System.Xml.XPath": "4.0.1"
         },
         "runtime": {
-          "lib/netstandard1.6/NSwag.AspNetCore.dll": {}
+          "lib/netstandard1.6/Swashbuckle.SwaggerUi.dll": {}
         },
         "compile": {
-          "lib/netstandard1.6/NSwag.AspNetCore.dll": {}
+          "lib/netstandard1.6/Swashbuckle.SwaggerUi.dll": {}
         }
       },
-      "NSwag.CodeGeneration/6.21.6150.29666": {
-        "dependencies": {
-          "NJsonSchema.CodeGeneration": "5.12.6149.950",
-          "NSwag.Core": "6.21.6150.29665"
-        },
-        "runtime": {
-          "lib/netstandard1.0/NSwag.CodeGeneration.dll": {}
-        },
-        "compile": {
-          "lib/netstandard1.0/NSwag.CodeGeneration.dll": {}
-        }
-      },
-      "NSwag.Core/6.21.6150.29665": {
-        "dependencies": {
-          "NJsonSchema": "5.12.6149.949"
-        },
-        "runtime": {
-          "lib/netstandard1.0/NSwag.Core.dll": {}
-        },
-        "compile": {
-          "lib/netstandard1.0/NSwag.Core.dll": {}
-        }
-      },
-      "react.js/0.14.7": {},
       "System.Collections.NonGeneric/4.0.1": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.0.11",
@@ -1342,6 +1365,37 @@
           "ref/netstandard1.3/System.Net.WebSockets.dll": {}
         }
       },
+      "System.Private.DataContractSerialization/4.1.1": {
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Linq": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
+          "System.Reflection.Emit.Lightweight": "4.0.1",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Serialization.Primitives": "4.1.1",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XmlDocument": "4.0.1",
+          "System.Xml.XmlSerializer": "4.0.11"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Private.DataContractSerialization.dll": {}
+        }
+      },
       "System.Runtime.Serialization.Primitives/4.1.1": {
         "dependencies": {
           "System.Resources.ResourceManager": "4.0.1",
@@ -1352,6 +1406,22 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
+        }
+      },
+      "System.Runtime.Serialization.Xml/4.1.1": {
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.Private.DataContractSerialization": "4.1.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Serialization.Primitives": "4.1.1",
+          "System.Text.Encoding": "4.0.11",
+          "System.Xml.ReaderWriter": "4.0.11"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Runtime.Serialization.Xml.dll": {}
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Runtime.Serialization.Xml.dll": {}
         }
       },
       "System.Text.Encodings.Web/4.0.0": {
@@ -1369,6 +1439,33 @@
         },
         "compile": {
           "lib/netstandard1.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "System.Xml.XmlSerializer/4.0.11": {
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Linq": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.Emit.ILGeneration": "4.0.1",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XmlDocument": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
       "Yeoman/1.1.2": {
@@ -3002,9 +3099,6 @@
           "System.Xml.XDocument": "4.0.11",
           "System.Xml.XPath": "4.0.1"
         },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
-        },
         "compileOnly": true
       }
     }
@@ -3024,6 +3118,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-3cEntbUZukLRwGIUtloGcUtdRfufSXuIWLW62eLarIQwzIS4i6A9cSOnaOw862sXKAeEZ5LlaDkczCuMK/zX0w=="
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YVq+s0WeXrPxJk57CoElbtMYf95j76uJcW6nue3Cs4eIer9sgUp4rasSo0gALX3ls1Zf2jMceOLik9X/sJyrwA=="
     },
     "Microsoft.AspNetCore.Antiforgery/1.0.1": {
       "type": "package",
@@ -3175,6 +3274,11 @@
       "serviceable": true,
       "sha512": "sha512-1zGeF76JEqvocxdM+H5n/vJunUUVNzKK4LmgnaFdrrCDTrI6MVdok+8TBBUbeI+uNk3ssrLnP3EcHIdvxl66gw=="
     },
+    "Microsoft.AspNetCore.Mvc.WebApiCompatShim/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-suSBTX0gqTvrjH2rtImPcfpqA4xQU97TJVX0P8/vwO1cehED520a5l9gGYUH80At7F4QpdIbApodt1rnHfFEJg=="
+    },
     "Microsoft.AspNetCore.Razor/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3214,6 +3318,16 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-D0licSnS1JgqQ/gYlN41wXbeYG3dFIdjY781YzMHZ5gBB7kczacshW+H6plZkXRr/cCnAJWGa31o1R8c5GEy/A=="
+    },
+    "Microsoft.Bcl/1.1.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-USQ55innJy8K+tAXvVa1O8dUTp2s7pmJ5cJj6Tl02HtGc2xBDj0P2QH5620HbGXIWKWYhydoeQF8Rm/JRDBGhw=="
+    },
+    "Microsoft.Bcl.Build/1.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cDLKSvNvRa519hplsbSoYqO69TjdDIhfjtKUM0g20/nVROoWsGav9KCI9HtnGjLmdV1+TcUUDhbotcllibjPEA=="
     },
     "Microsoft.DotNet.InternalAbstractions/1.0.0": {
       "type": "package",
@@ -3365,6 +3479,11 @@
       "serviceable": true,
       "sha512": "sha512-NSSIBREmHHiyoAFXV2LMA+a6RMZtTHxgUbHJGHRtnjmTKnRyticx5HAzNpy8VG9+HCCHenL9QD7zSA8jjgAi5A=="
     },
+    "Microsoft.Net.Http/2.2.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bqVLJ2UimlAEs2bn3y28lB1pmFRxuysv9pFyB0A86WEMYGYTfDyfjAGjm0fiaSRjlMNU1jVnp8Mxt8qe4OmpXQ=="
+    },
     "Microsoft.Net.Http.Headers/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3374,16 +3493,6 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw=="
-    },
-    "NJsonSchema/5.12.6149.949": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-uKPj8+YoMUMCGa7urfJVXCT+XgQ+wfkopXSwAamCxFOwza5PlRCvpFpC+8BhwJqNC4p+gRhgbDP1gSwoPonTGw=="
-    },
-    "NJsonSchema.CodeGeneration/5.12.6149.950": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4mf/ErJrG8PhWx9ktSDoNuJ3fiwq/vRz7w1m3hXXHbAnX+eHiEi9sL0m+6dRBxOasHYwLlRQWkhzeqxP8QCZnQ=="
     },
     "Node.js/0.10.26.1": {
       "type": "package",
@@ -3400,30 +3509,30 @@
       "serviceable": true,
       "sha512": "sha512-0dnl7VxZdbGs0a693ao+MumdyygMWfVF+kudxIDdO3rdEOoowDEC4rJvTkrOcd3ESw1C0SToEgfLtmUISjuPXQ=="
     },
-    "NSwag.Annotations/6.21.6150.29666": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rxhnGbKC1iBtZywkSmfj4MashXPAOO/4WmHUSkoVI/oBO6zam/uCzMi91BrA14WLhffwn3aT9ttpXnHCF2n0qg=="
-    },
-    "NSwag.AspNetCore/6.21.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9mzh/JoS3Mik8zF+UoyctGrN5wIEaiozcHulVoHy3xEEAFkDut8dtH6xKAs3S2v9vRmMcR9DaVOhFnf+u7YdzQ=="
-    },
-    "NSwag.CodeGeneration/6.21.6150.29666": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5aO/gXuW5fdYpoZkzi7mUrlKpHp3e6FySuHJZWF7PGJxnH9LgJWAkvMIsMI8u06J+HrtroNIszmUZ455CHZq0Q=="
-    },
-    "NSwag.Core/6.21.6150.29665": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-z9fC7MOG1lzG+GAFVwcVT+JPzTinc4gtRixFp3Ro9UPJ0sfJIoOjUnQnGZrcQXeW/WljQEtLO9vcveQLRunHQA=="
-    },
     "react.js/0.14.7": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Vuiy4eCBUzaAHE7QGiQPueMajINZprnC3742+tv5hQIlsAJJ9iI+kg58EsqO4jbVkOlMW9G2kS0mPSwgOZJoZQ=="
+    },
+    "Swashbuckle/6.0.0-beta901": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7QlFBzUxOwDrUOo2ZMLzF1ekhelozTUCzNifnz2rND+HqR0lJ6Bpl5QfIDVRnjMAge9LLTsc+TQLynkLVliKWw=="
+    },
+    "Swashbuckle.Swagger/6.0.0-beta901": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Aa9fzgCfJ6STF9EJyvpHz0J2BUKMYOV/ASZVvEN/Z8Tad4Ovn2KiKr6yN5rrXvtVqWjYlOiFPd01TM/DCtmKYA=="
+    },
+    "Swashbuckle.SwaggerGen/6.0.0-beta901": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lLznzenpFMkSyIygf7PZr9f48PRT51kSrrfsvufgciUxnKOBsGJMAFhBWQFccYSxDjFYdP0EOfPU6yZrGwZ+nQ=="
+    },
+    "Swashbuckle.SwaggerUi/6.0.0-beta901": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qqYh14nwLQI4NCTYQXjtoXoAjv1Fonio5LFRLlbQ8vfDUMOjEzBw94oLUF7uRBivrY6NEEqTmBasSdujveCCeA=="
     },
     "System.Collections.NonGeneric/4.0.1": {
       "type": "package",
@@ -3455,15 +3564,30 @@
       "serviceable": true,
       "sha512": "sha512-2KJo8hir6Edi9jnMDAMhiJoI691xRBmKcbNpwjrvpIMOCTYOtBpSsSEGBxBDV7PKbasJNaFp1+PZz1D7xS41Hg=="
     },
+    "System.Private.DataContractSerialization/4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lcqFBUaCZxPiUkA4dlSOoPZGtZsAuuElH2XHgLwGLxd7ZozWetV5yiz0qGAV2AUYOqw97MtZBjbLMN16Xz4vXA=="
+    },
     "System.Runtime.Serialization.Primitives/4.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-HZ6Du5QrTG8MNJbf4e4qMO3JRAkIboGT5Fk804uZtg3Gq516S7hAqTm2UZKUHa7/6HUGdVy3AqMQKbns06G/cg=="
     },
+    "System.Runtime.Serialization.Xml/4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yqfKHkWUAdI0hdDIdD9KDzluKtZ8IIqLF3O7xIZlt6UTs1bOvFRpCvRTvGQva3Ak/ZM9/nq9IHBJ1tC4Ybcrjg=="
+    },
     "System.Text.Encodings.Web/4.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-TWZnuiJgPDAEEUfobD7njXvSVR2Toz+jvKWds6yL4oSztmKQfnWzucczjzA+6Dv1bktBdY71sZW1YN0X6m9chQ=="
+    },
+    "System.Xml.XmlSerializer/4.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FrazwwqfIXTfq23mfv4zH+BjqkSFNaNFBtjzu3I9NRmG8EELYyrv/fJnttCIwRMFRR/YKXF1hmsMmMEnl55HGw=="
     },
     "Yeoman/1.1.2": {
       "type": "package",

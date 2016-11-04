@@ -26,7 +26,6 @@ namespace SampleNetCore
                 .UseStartup<Startup>()
                 .UseUrls(url)
                 .Build();
-                
 
             host.Run();
         }

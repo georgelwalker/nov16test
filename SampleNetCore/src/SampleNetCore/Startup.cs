@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.Swagger.Model;
 
 namespace SampleNetCore
 {
@@ -19,6 +20,8 @@ namespace SampleNetCore
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+
             Configuration = builder.Build();
         }
 
@@ -29,6 +32,18 @@ namespace SampleNetCore
         {
             // Add framework services.
             services.AddMvc();
+
+            /*Adding swagger generation with default settings*/
+            services.AddSwaggerGen(options => {
+                options.SingleApiVersion(new Info
+                {
+                    Version = "v1",
+                    Title = "REST API Documentation",
+                    Description = "API Sample",
+                    TermsOfService = "None"
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +52,13 @@ namespace SampleNetCore
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            /*Enabling swagger file*/
+            app.UseSwagger();
+            /*Enabling Swagger ui, consider doing it on Development env only*/
+            app.UseSwaggerUi();
+            app.UseDefaultFiles();
+
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
