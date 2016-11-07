@@ -34,6 +34,9 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using Swashbuckle.Swagger.Model;
 using Swashbuckle.SwaggerGen.Annotations;
+using IO.Swagger.Models;
+using Npgsql;
+using Microsoft.EntityFrameworkCore;
 
 namespace IO.Swagger
 {
@@ -54,11 +57,25 @@ namespace IO.Swagger
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
-  
-    
-        // This method gets called by the runtime. Use this method to add services to the container.
+
+
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // Entity Framework
+
+            //var connection = @"Host = 127.0.0.1; Username = test; Password = test161107; Database = test";
+            //services.AddDbContext<DbTestContext>();
+
+            var connectionString = Configuration["DbContextSettings:ConnectionString"];
+            services.AddDbContext<DbTestContext>(
+                opts => opts.UseNpgsql(connectionString)
+            );
+
             // Add framework services.
             services.AddMvc()
                 .AddJsonOptions(

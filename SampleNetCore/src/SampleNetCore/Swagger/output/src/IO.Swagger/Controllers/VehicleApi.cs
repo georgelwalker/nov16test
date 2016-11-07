@@ -40,12 +40,18 @@ namespace IO.Swagger.Controllers
     /// 
     /// </summary>
     public class VehicleApiController : Controller
-    { 
+    {
+        private DbTestContext _context;
 
         /// <summary>
         /// 
         /// </summary>
-        
+
+        public VehicleApiController(DbTestContext context)
+        {
+            _context = context;
+        }
+
         /// <response code="200">OK</response>
         [HttpGet]
         [Route("/Vehicles")]
@@ -54,10 +60,36 @@ namespace IO.Swagger.Controllers
         public virtual IActionResult VehiclesGet()
         { 
             string exampleJson = null;
-            
-            var example = exampleJson != null
+
+            /*var example = exampleJson != null
             ? JsonConvert.DeserializeObject<List<Vehicle>>(exampleJson)
             : default(List<Vehicle>);
+            */
+            var example = _context.Vehicles.ToList();
+
+            return new ObjectResult(example);
+        }
+
+        [HttpGet]
+        [Route("/Create")]
+        [SwaggerOperation("VehiclesCreate")]
+        [SwaggerResponse(200, type: typeof(String))]
+        public virtual IActionResult CreateVehicle()
+        {
+            // create a vehicle.
+            Vehicle vehicle = new Models.Vehicle();
+
+
+            Random r = new Random();
+            int rInt = r.Next(0, 100); //for ints
+
+            vehicle.DisplayName = "Sample Vehicle - " + rInt;
+            vehicle.Description = "Sample Description.";
+            _context.Vehicles.Add(vehicle);
+            _context.SaveChanges();
+
+            var example = _context.Vehicles.ToList();
+
             return new ObjectResult(example);
         }
 

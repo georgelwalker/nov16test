@@ -39,6 +39,16 @@ namespace IO.Swagger.Models
     public partial class Vehicle :  IEquatable<Vehicle>
     {
         /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Vehicle()
+        {
+            this.VehicleId = null;
+            this.Description = null;
+            this.DisplayName = null;
+
+        }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Vehicle" /> class.
         /// </summary>
         /// <param name="VehicleId">VehicleId.</param>
