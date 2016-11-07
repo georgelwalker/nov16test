@@ -20,17 +20,11 @@ namespace IO.Swagger
 			var url = config["ASPNETCORE_URLS"] ?? "http://*:8080";
 		 
             var host = new WebHostBuilder()
-                .UseKestrel(options =>
-                {
-                    // options.ThreadCount = 4;
-                    // options.UseHttps("cert.pfx", "certpassword");
-                    options.NoDelay = true;
-                    options.UseConnectionLogging();
-                })
-                .UseUrls(url)
+                .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls(url)
                 .Build();
 
             host.Run();
