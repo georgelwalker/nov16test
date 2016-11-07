@@ -48,7 +48,7 @@ namespace IO.Swagger.Controllers
         /// <param name="id"></param>
         /// <response code="204">No Content</response>
         [HttpDelete]
-        [Route("//api/Values/{id}")]
+        [Route("/api/Values/{id}")]
         [SwaggerOperation("ApiValuesByIdDelete")]
         public virtual void ApiValuesByIdDelete([FromRoute]int? id)
         { 
@@ -63,7 +63,7 @@ namespace IO.Swagger.Controllers
         /// <param name="id"></param>
         /// <response code="200">OK</response>
         [HttpGet]
-        [Route("//api/Values/{id}")]
+        [Route("/api/Values/{id}")]
         [SwaggerOperation("ApiValuesByIdGet")]
         [SwaggerResponse(200, type: typeof(string))]
         public virtual IActionResult ApiValuesByIdGet([FromRoute]int? id)
@@ -85,7 +85,7 @@ namespace IO.Swagger.Controllers
         /// <param name="value"></param>
         /// <response code="204">No Content</response>
         [HttpPut]
-        [Route("//api/Values/{id}")]
+        [Route("/api/Values/{id}")]
         [SwaggerOperation("ApiValuesByIdPut")]
         public virtual void ApiValuesByIdPut([FromRoute]int? id, [FromBody]string value)
         { 
@@ -99,7 +99,7 @@ namespace IO.Swagger.Controllers
         
         /// <response code="200">OK</response>
         [HttpGet]
-        [Route("//api/Values")]
+        [Route("/api/Values")]
         [SwaggerOperation("ApiValuesGet")]
         [SwaggerResponse(200, type: typeof(List<string>))]
         public virtual IActionResult ApiValuesGet()
@@ -120,7 +120,7 @@ namespace IO.Swagger.Controllers
         /// <param name="value"></param>
         /// <response code="204">No Content</response>
         [HttpPost]
-        [Route("//api/Values")]
+        [Route("/api/Values")]
         [SwaggerOperation("ApiValuesPost")]
         public virtual void ApiValuesPost([FromBody]string value)
         { 

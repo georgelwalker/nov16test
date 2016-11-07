@@ -6,7 +6,7 @@
     "description": "API Sample",
     "termsOfService": "None"
   },
-  "basePath": "/",
+  "basePath": "",
   "paths": {
     "/api/Values": {
       "get": {

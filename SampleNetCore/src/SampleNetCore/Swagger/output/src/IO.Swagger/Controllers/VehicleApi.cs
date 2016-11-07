@@ -47,7 +47,7 @@ namespace IO.Swagger.Controllers
         
         /// <response code="200">OK</response>
         [HttpGet]
-        [Route("//Vehicles")]
+        [Route("/Vehicles")]
         [SwaggerOperation("VehiclesGet")]
         [SwaggerResponse(200, type: typeof(List<Vehicle>))]
         public virtual IActionResult VehiclesGet()

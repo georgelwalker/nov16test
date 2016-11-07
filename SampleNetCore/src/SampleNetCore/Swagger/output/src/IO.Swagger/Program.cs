@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 
 namespace IO.Swagger
 {
@@ -12,6 +13,12 @@ namespace IO.Swagger
     {
         public static void Main(string[] args)
         {
+			var config = new ConfigurationBuilder()
+                .AddEnvironmentVariables("")
+            .Build();
+			
+			var url = config["ASPNETCORE_URLS"] ?? "http://*:8080";
+		 
             var host = new WebHostBuilder()
                 .UseKestrel(options =>
                 {
@@ -20,7 +27,7 @@ namespace IO.Swagger
                     options.NoDelay = true;
                     options.UseConnectionLogging();
                 })
-                .UseUrls("http://+:5000" /*, "https://+:5001" */)
+                .UseUrls(url)
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
