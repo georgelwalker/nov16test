@@ -90,6 +90,11 @@ namespace IO.Swagger
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+			//if (env.IsDevelopment())
+			//{
+				app.UseDeveloperExceptionPage();
+			//}
+			
             app.UseMvc();
             
             app.UseDefaultFiles();

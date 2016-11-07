@@ -58,6 +58,7 @@ namespace SampleNetCore
             app.UseSwaggerUi();
             app.UseDefaultFiles();
 
+       
             app.UseStaticFiles();
             app.UseMvc();
         }
