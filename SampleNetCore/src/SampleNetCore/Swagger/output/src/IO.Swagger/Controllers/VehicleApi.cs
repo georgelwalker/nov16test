@@ -32,6 +32,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Swashbuckle.SwaggerGen.Annotations;
 using IO.Swagger.Models;
+using Npgsql;
 
 namespace IO.Swagger.Controllers
 { 
@@ -57,6 +58,42 @@ namespace IO.Swagger.Controllers
             var example = exampleJson != null
             ? JsonConvert.DeserializeObject<List<Vehicle>>(exampleJson)
             : default(List<Vehicle>);
+            return new ObjectResult(example);
+        }
+
+        [HttpGet]
+        [Route("/db")]
+        
+        [SwaggerResponse(200, type: typeof(String))]
+        public virtual IActionResult DbGet()
+        {
+            string exampleJson = null;
+
+            var example = "This is just a test.";
+            // using (var conn = new NpgsqlConnection("Host=127.0.0.1;Username=test;Password=test161107;Database=test"))
+            try
+            {
+
+
+                using (var conn = new NpgsqlConnection("Host=172.30.36.242;Username=test;Password=test161107;Database=test"))
+                {
+                    conn.Open();
+                    if (conn.State == System.Data.ConnectionState.Open)
+                    {
+                        example = "connected to the database.";
+                    }
+                    else
+                    {
+                        example = "not connected to the database.";
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                example = "exception occured. " + e.ToString() ;
+            }
+
+
             return new ObjectResult(example);
         }
     }
