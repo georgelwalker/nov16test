@@ -10,4 +10,4 @@ ENV ASPNETCORE_URLS http://*:8080
 EXPOSE 8080
 
 RUN ["dotnet", "restore"]
-ENTRYPOINT ["dotnet", "run", "-p", "project.json", "web"]
+ENTRYPOINT ["dotnet", "run"]
