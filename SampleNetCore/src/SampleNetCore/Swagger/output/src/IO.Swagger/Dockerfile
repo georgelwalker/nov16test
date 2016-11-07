@@ -6,8 +6,10 @@ RUN mkdir -p /app/IO.Swagger
 COPY . /app/IO.Swagger
 WORKDIR /app/IO.Swagger
 
+RUN dotnet restore
+RUN dotnet build
+
 ENV ASPNETCORE_URLS http://*:8080
 EXPOSE 8080
 
-RUN ["dotnet", "restore"]
 ENTRYPOINT ["dotnet", "run"]
