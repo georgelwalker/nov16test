@@ -95,13 +95,19 @@ Vagrant.configure(2) do |config|
     echo "admin/admin"
     echo
     echo "If you have the oc client library on your host, you can also login from your host."
-    echo	
-	oc login localhost:8443 -u admin -p admin
-
+    echo 
+	echo "Waiting for OpenShift server to start..."
+  SHELL
+  
+  config.vm.provision "shell", run: "always", inline: <<-SHELL
+  while ! timeout 1 bash -c "echo > /dev/tcp/localhost/8443"; do sleep 1; done
+  SHELL
+  config.vm.provision "shell", run: "always", inline: <<-SHELL  
+	oc login https://localhost:8443 -u admin --certificate-authority="/etc/pki/tls/certs/ca-bundle.trust.crt" --insecure-skip-tls-verify=true -p admin
+  SHELL
+  config.vm.provision "shell", run: "always", inline: <<-SHELL
 	oc new-project school-bus --description="MOTI School Bus Maintenance" --display-name="School Bus"
-
 	oc project school-bus
-
-	oc new-app https://github.com/GeorgeWalker/nov16test.git --context-dir=/MockingServer --name="mocking-server"
+	oc new-app https://github.com/GeorgeWalker/nov16test.git --context-dir=/MockingServer --name="mocking-server" --allow-missing-imagestream-tags
   SHELL
 end
