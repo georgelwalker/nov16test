@@ -8,5 +8,8 @@
     "grunt-contrib-nodeunit": "^0.4.1",
     "grunt-contrib-uglify": "^0.5.1",
     "swagger-mock-api": "^1.6.0"
-  }
+  },
+  "scripts": {
+    "start": "grunt"
+  },
 }
