@@ -11,7 +11,6 @@
     "swagger-mock-api": "^1.6.0"
   },
   "scripts": {
-    "postinstall": "node_modules/.bin/grunt prod",
-    "start": "grunt"
+    "start": "node_modules/.bin/grunt"
   }
 }
