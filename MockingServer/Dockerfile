@@ -1,4 +1,4 @@
-FROM dockerfile/nodejs
+FROM dockerfile/nodejs-4-rhel7:latest
 
 
 RUN mkdir -p /app
