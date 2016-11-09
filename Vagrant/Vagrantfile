@@ -109,5 +109,10 @@ Vagrant.configure(2) do |config|
 	oc new-project school-bus --description="MOTI School Bus Maintenance" --display-name="School Bus"
 	oc project school-bus
 	oc new-app https://github.com/GeorgeWalker/nov16test.git --context-dir=/MockingServer --name="mocking-server" --allow-missing-imagestream-tags
+	oc expose dc/mocking-server --port=8080 --name="mocking-service"
+	oc expose svc/mocking-server --port=8080 --name="mocking-route"	
+	oc new-app -e \
+    POSTGRESQL_USER=test,POSTGRESQL_PASSWORD="test161107",POSTGRESQL_DATABASE=test \
+    registry.access.redhat.com/rhscl/postgresql-94-rhel7 --name="app-database"
   SHELL
 end
