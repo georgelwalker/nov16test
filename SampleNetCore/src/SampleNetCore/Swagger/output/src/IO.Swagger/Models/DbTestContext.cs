@@ -25,12 +25,15 @@ namespace IO.Swagger.Models
         /// <param name="options">Options for the database context</param>
         public DbTestContext(DbContextOptions<DbTestContext> options)
                 : base(options)
-            { }
+            {
+            Database.SetInitializer<SchoolDBContext>(new CreateDatabaseIfNotExists<DbTestContext>());
 
-            /// <summary>
-            /// Used to get the list of vehicles
-            /// </summary>
-            public DbSet<Vehicle> Vehicles { get; set; }
+        }
+
+        /// <summary>
+        /// Used to get the list of vehicles
+        /// </summary>
+        public DbSet<Vehicle> Vehicles { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
