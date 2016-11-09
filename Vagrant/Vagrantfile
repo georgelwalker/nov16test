@@ -96,7 +96,7 @@ Vagrant.configure(2) do |config|
     echo
     echo "If you have the oc client library on your host, you can also login from your host."
     echo	
-	oc login -u admin -p admin
+	oc login localhost:8443 -u admin -p admin
 
 	oc new-project school-bus --description="MOTI School Bus Maintenance" --display-name="School Bus"
 
