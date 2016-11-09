@@ -1,0 +1,6 @@
+openshift.auth.scheme=Basic
+openshift.auth.username=openshift-dev
+openshift.auth.password=devel
+vagrant.binary.path=c:\dev\redhat\vagrant\bin
+oc.binary.path=c:\dev\redhat\cdk\bin
+rhel.subscription.username=george@escapesystems.com
