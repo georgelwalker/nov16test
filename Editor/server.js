@@ -49,8 +49,8 @@ if (require.main === module) {
     // to avoid opening the browser set DO_NOT_OPEN environment
     // variable to true
     if (!process.env.DO_NOT_OPEN) {
-      console.log('Opening the browser');
-      open(url);
+      //console.log('Opening the browser');
+      //open(url);
     }
   });
 }
