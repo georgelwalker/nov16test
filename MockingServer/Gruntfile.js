@@ -15,7 +15,7 @@ module.exports = function(grunt) {
           middleware: [
             mockApi({
                   //swaggerFile: path.join(__dirname, 'C:\Users\georg\Source\Repos\nov16test\SampleNetCore\src\SampleNetCore\Swagger\sample.json'),
-                  swaggerFile: 'C:\\Users\\georg\\Source\\Repos\\nov16test\\SampleNetCore\\src\\SampleNetCore\\Swagger\\sample.json',
+                  swaggerFile: '..\\SampleNetCore\\src\\SampleNetCore\\Swagger\\sample.json',
                   
 				  watch: true // enable reloading the routes and schemas when the swagger file changes
               })
