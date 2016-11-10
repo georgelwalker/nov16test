@@ -56,6 +56,8 @@ namespace IO.Swagger
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            
         }
 
 
@@ -75,6 +77,8 @@ namespace IO.Swagger
             services.AddDbContext<DbTestContext>(
                 opts => opts.UseNpgsql(connectionString)
             );
+
+            
 
             // Add framework services.
             services.AddMvc()
@@ -97,9 +101,9 @@ namespace IO.Swagger
                 var comments = new XPathDocument($"{AppContext.BaseDirectory}{Path.DirectorySeparatorChar}{_hostingEnv.ApplicationName}.xml");
                 options.OperationFilter<XmlCommentsOperationFilter>(comments);
                 options.ModelFilter<XmlCommentsModelFilter>(comments);
-            });
-            
+            });            
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -107,11 +111,20 @@ namespace IO.Swagger
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-			//if (env.IsDevelopment())
-			//{
+			if (env.IsDevelopment())
+			{
 				app.UseDeveloperExceptionPage();
-			//}
-			
+            }
+            else
+            {
+                //  app.UseExceptionHandler("/Home/Error");
+                app.UseDeveloperExceptionPage();
+            }
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                serviceScope.ServiceProvider.GetService<DbTestContext>()
+                     .Database.Migrate();
+            }
             app.UseMvc();
             
             app.UseDefaultFiles();
