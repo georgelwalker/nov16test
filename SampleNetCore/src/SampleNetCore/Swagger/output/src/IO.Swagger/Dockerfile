@@ -1,4 +1,5 @@
-FROM microsoft/dotnet:1.0.0-preview2-sdk
+FROM https://github.com/dotnet/dotnet-docker/blob/master/1.0.0-preview2/debian/sdk/Dockerfile
+# microsoft/dotnet:1.0.0-preview2-sdk
 
 ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 
