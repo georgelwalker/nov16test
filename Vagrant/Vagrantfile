@@ -8,12 +8,12 @@ PUBLIC_ADDRESS="10.1.2.2"
 # Number of virtualized CPUs
 VM_CPU = ENV['VM_CPU'] || 2
 
-# Amount of available RAM
-VM_MEMORY = ENV['VM_MEMORY'] || 3072
+# Amount of available RAM (was 3072)
+VM_MEMORY = ENV['VM_MEMORY'] || 4096
 
 # Validate required plugins
-# removed vagrant-registration 
-REQUIRED_PLUGINS = %w(vagrant-service-manager vagrant-sshfs)
+# removed 
+REQUIRED_PLUGINS = %w(vagrant-service-manager vagrant-registration vagrant-sshfs)
 errors = []
 
 def message(name)
@@ -51,6 +51,7 @@ Vagrant.configure(2) do |config|
     config.registration.username = ENV['SUB_USERNAME']
     config.registration.password = ENV['SUB_PASSWORD']
   end
+
 
   # Proxy Information from environment
   config.registration.proxy = PROXY = (ENV['PROXY'] || '')
@@ -101,11 +102,11 @@ Vagrant.configure(2) do |config|
 	oc new-app registry.access.redhat.com/rhscl/nodejs-4-rhel7~https://github.com/GeorgeWalker/nov16test.git --context-dir=/Editor --name="swagger-editor-server" --allow-missing-imagestream-tags
 	oc expose dc/swagger-editor-server --port=8080 --name="swagger-editor-service"
 	oc expose svc/swagger-editor-service --name="swagger-editor"
-
 	
-	
-	echo "Setting up a .NET core application with a name of app"
-	oc new-app registry.access.redhat.com/dotnet/dotnetcore-10-rhel7~https://github.com/GeorgeWalker/nov16test.git --context-dir=/SampleNetCore/src/SampleNetCore/Swagger/output/src/IO.Swagger --name="app" --allow-missing-imagestream-tags
+	echo "Setting up a .NET core application with a name of app-server"
+	oc new-app registry.access.redhat.com/dotnet/dotnetcore-10-rhel7~https://github.com/GeorgeWalker/nov16test.git --context-dir=/SampleNetCore/src/SampleNetCore/Swagger/output/src/IO.Swagger --name="app-server" --allow-missing-imagestream-tags
+	oc expose dc/app-server --port=8080 --name="app-server"
+	oc expose svc/app-server --name="app-server"
   SHELL
   
   config.vm.provision "shell", run: "always", inline: <<-SHELL
