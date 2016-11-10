@@ -32,10 +32,7 @@
       "type": "build",
       "version": "1.0.1"
     },
-    "Microsoft.EntityFrameworkCore.Tools": {
-      "version": "1.0.0-*",
-      "type": "build"
-    }
+    "Microsoft.EntityFrameworkCore.Commands": "1.0.0-rc3-20680",
   },
 
   "tools": {
@@ -55,6 +52,10 @@
     }
   },
 
+  "commands": {
+    "ef": "Microsoft.EntityFrameworkCore.Commands"
+  },
+
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
@@ -69,7 +70,7 @@
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true,
-	"debugType": "portable",
+    "debugType": "portable",
     "xmlDoc": true,
     "compile": {
       "exclude": [
