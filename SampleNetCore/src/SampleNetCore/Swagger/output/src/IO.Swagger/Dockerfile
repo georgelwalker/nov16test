@@ -12,7 +12,7 @@ RUN dotnet build
 
 # install or update the database
 RUN dotnet ef database update
-
+ENV ASPNETCORE_ENVIRONMENT Staging
 ENV ASPNETCORE_URLS http://*:8080
 EXPOSE 8080
 
