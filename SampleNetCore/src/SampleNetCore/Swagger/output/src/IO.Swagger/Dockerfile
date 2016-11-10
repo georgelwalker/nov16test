@@ -1,4 +1,5 @@
-FROM dotnet/dotnetcore-10-rhel7 
+FROM registry.access.redhat.com/dotnet/dotnetcore-10-rhel7/dotnet/dotnetcore-10-rhel7 
+#FROM dotnet/dotnetcore-10-rhel7 
 
 ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 
