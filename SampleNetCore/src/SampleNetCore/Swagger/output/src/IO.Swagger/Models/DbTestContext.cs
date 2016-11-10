@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+
 using Npgsql;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 
@@ -26,7 +27,7 @@ namespace IO.Swagger.Models
         public DbTestContext(DbContextOptions<DbTestContext> options)
                 : base(options)
             {
-            Database.SetInitializer<SchoolDBContext>(new CreateDatabaseIfNotExists<DbTestContext>());
+           
 
         }
 
