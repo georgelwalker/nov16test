@@ -49,13 +49,24 @@ namespace IO.Swagger
         public Startup(IHostingEnvironment env)
         {
             _hostingEnv = env;
-
-            var builder = new ConfigurationBuilder()
+            if (env.IsDevelopment())
+            {
+                var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.dev.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+                Configuration = builder.Build();
+            }
+            else
+            {
+                var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
-            Configuration = builder.Build();
+                Configuration = builder.Build();
+            }
 
             
         }
