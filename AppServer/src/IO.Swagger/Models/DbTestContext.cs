@@ -14,7 +14,12 @@ namespace IO.Swagger.Models
     /// </summary>
     public class DbTestContext : DbContext
     {
+        public DbTestContext()
+               : base()
+        {
 
+
+        }
         /// <summary>
         /// Database Connection String
         /// </summary>
@@ -34,7 +39,7 @@ namespace IO.Swagger.Models
         /// <summary>
         /// Used to get the list of vehicles
         /// </summary>
-        public DbSet<Vehicle> Vehicles { get; set; }
+        public virtual DbSet<Vehicle> Vehicles { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
