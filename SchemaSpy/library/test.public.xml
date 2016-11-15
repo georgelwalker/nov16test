@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<database name="test" schema="public" type="PostgreSQL - 9.4.9">
+<database name="test" schema="public" type="PostgreSQL - 9.4.10">
    <tables>
       <table name="__EFMigrationsHistory" numRows="2" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="MigrationId" nullable="false" remarks="" size="150" type="varchar"/>
@@ -9,11 +9,10 @@
             <column ascending="true" name="MigrationId"/>
          </index>
       </table>
-      <table name="Vehicles" numRows="1" remarks="" schema="public" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('&quot;Vehicles_VehicleId_seq&quot;'::regclass)" digits="0" id="0" name="VehicleId" nullable="false" remarks="" size="10" type="serial"/>
+      <table name="Vehicles" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('&quot;Vehicles_VehicleId_seq&quot;'::regclass)" digits="0" id="0" name="VehicleId" nullable="false" remarks="Testing the comments feature 200" size="10" type="serial"/>
          <column autoUpdated="false" digits="0" id="1" name="Description" nullable="true" remarks="" size="2147483647" type="text"/>
          <column autoUpdated="false" digits="0" id="2" name="DisplayName" nullable="true" remarks="" size="2147483647" type="text"/>
-         <column autoUpdated="false" digits="0" id="3" name="test" nullable="true" remarks="Sample comment" size="19" type="int8"/>
          <primaryKey column="VehicleId" sequenceNumberInPK="1"/>
          <index name="PK_Vehicles" unique="true">
             <column ascending="true" name="VehicleId"/>
