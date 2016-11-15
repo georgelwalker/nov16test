@@ -1,0 +1,1 @@
+java -jar schemaspy-6.0.0-jar-with-dependencies.jar -t pgsql -db test -s public -host localhost -port 5432 -u test -p test161107 -o library -dp postgresql-9.4-1201.jdbc4.jar

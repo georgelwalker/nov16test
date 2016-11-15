@@ -1,0 +1,1 @@
+C:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\.sonarqube\out\\MSBuild_AnyCPU_Debug_3978

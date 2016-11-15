@@ -51,10 +51,12 @@ namespace IO.Swagger
             _hostingEnv = env;
             if (env.IsDevelopment())
             {
+                string development_config = $"appsettings.{env.EnvironmentName}.json";
                 var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.dev.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                // this is for the Development options.
+                .AddJsonFile(development_config, optional: true)
                 .AddEnvironmentVariables();
                 Configuration = builder.Build();
             }
@@ -86,7 +88,7 @@ namespace IO.Swagger
 
             var connectionString = Configuration["DbContextSettings:ConnectionString"];
             services.AddDbContext<DbTestContext>(
-                opts => opts.UseNpgsql(connectionString)
+                options => options.UseNpgsql(connectionString)
             );
 
             
@@ -133,8 +135,14 @@ namespace IO.Swagger
             }
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                serviceScope.ServiceProvider.GetService<DbTestContext>()
-                     .Database.Migrate();
+                // get the application's database context
+                DbContext context = serviceScope.ServiceProvider.GetService<DbTestContext>();
+                // do any pending migrations
+                context.Database.Migrate();
+                // populate the column comments.  Comments are the PGSQL column descriptions
+                DbCommentsUpdater<DbTestContext> updater = new DbCommentsUpdater<DbTestContext>((DbTestContext)context);
+                updater.UpdateDatabaseDescriptions();
+
             }
             app.UseMvc();
             

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>MSBuild</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>23b5ad69-aca2-4cc2-8e77-d4ad24471006</ProjectGuid>
+  <FullPath>C:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\MSBuild.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\.sonarqube\out\\MSBuild_AnyCPU_Debug_3978\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\bin\Debug\MSBuild.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\.sonarqube\out\\MSBuild_AnyCPU_Debug_3978</Property>
+    <Property Name="sonar.stylecop.projectFilePath">C:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\MSBuild.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

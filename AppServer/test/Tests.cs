@@ -28,11 +28,6 @@ namespace Tests
         public Tests()
         {
             // first we need a database context.
-
-
-            //var connectionString = Configuration["DbContextSettings:ConnectionString"];
-            //var connectionString = "Host = 127.0.0.1; Username = test; Password = test161107; Database = test";
-            //DbContextOptions<DbTestContext> options = new DbContextOptions<DbTestContext>(opts => opts.UseNpgsql(connectionString));
             
             var dbTestContext = new Mock <DbTestContext>();
             Vehicle fakeVehicle = new Vehicle(1, "Test Name", "Test Description");

@@ -1,0 +1,5 @@
+projectKey=GWTEST
+serverUrl=https://sonarqube.com
+dashboardUrl=https://sonarqube.com/dashboard/index/GWTEST
+ceTaskId=AVhkYXhpZF9dlNNwkMWx
+ceTaskUrl=https://sonarqube.com/api/ce/task?id=AVhkYXhpZF9dlNNwkMWx

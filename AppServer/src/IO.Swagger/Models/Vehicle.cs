@@ -66,6 +66,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets VehicleId
         /// </summary>
         [DataMember(Name="vehicle_id")]
+        [MetaDataExtension (Description = "Testing the comments feature 1234")]
         public int? VehicleId { get; set; }
 
         /// <summary>

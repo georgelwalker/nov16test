@@ -42,12 +42,12 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Startup.cs" />
-    <Compile Include="..\Program.cs"/>
-	<Compile Include="..\Models\Vehicle.cs"/>
-	<Compile Include="..\Models\DbTestContext.cs"/>
-	<Compile Include="..\Controllers\VehicleApi.cs"/>
-	<Compile Include="..\Controllers\ValuesApi.cs"/>
+    <Compile Include="..\src\IO.Swagger\Startup.cs" />
+    <Compile Include="..\src\IO.Swagger\Program.cs"/>
+	<Compile Include="..\src\IO.Swagger\Models\Vehicle.cs"/>
+	<Compile Include="..\src\IO.Swagger\Models\DbTestContext.cs"/>
+	<Compile Include="..\src\IO.Swagger\Controllers\VehicleApi.cs"/>
+	<Compile Include="..\src\IO.Swagger\Controllers\ValuesApi.cs"/>
 	
   </ItemGroup>
    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

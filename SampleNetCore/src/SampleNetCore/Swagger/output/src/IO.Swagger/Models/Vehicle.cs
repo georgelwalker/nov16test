@@ -72,6 +72,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets Description
         /// </summary>
         [DataMember(Name="description")]
+  
         public string Description { get; set; }
 
         /// <summary>

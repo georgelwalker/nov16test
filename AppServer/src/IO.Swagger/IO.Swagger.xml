@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IO.Swagger</name>
+    </assembly>
+    <members>
+        <member name="M:IO.Swagger.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:IO.Swagger.Controllers.ValuesApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Controllers.ValuesApiController.ApiValuesByIdDelete(System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <response code="204">No Content</response>
+        </member>
+        <member name="M:IO.Swagger.Controllers.ValuesApiController.ApiValuesByIdGet(System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <response code="200">OK</response>
+        </member>
+        <member name="M:IO.Swagger.Controllers.ValuesApiController.ApiValuesByIdPut(System.Nullable{System.Int32},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+            <response code="204">No Content</response>
+        </member>
+        <member name="M:IO.Swagger.Controllers.ValuesApiController.ApiValuesGet">
+            <summary>
+            
+            </summary>
+            <response code="200">OK</response>
+        </member>
+        <member name="M:IO.Swagger.Controllers.ValuesApiController.ApiValuesPost(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <response code="204">No Content</response>
+        </member>
+        <member name="T:IO.Swagger.Controllers.VehicleApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Controllers.VehicleApiController.#ctor(IO.Swagger.Models.DbTestContext)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Controllers.VehicleApiController.VehiclesGet">
+            <response code="200">OK</response>
+        </member>
+        <member name="T:IO.Swagger.Models.DbTestContext">
+            <summary>
+            Database Context used by the application
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.DbTestContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{IO.Swagger.Models.DbTestContext})">
+            <summary>
+            Database Context Constructor
+            </summary>
+            <param name="options">Options for the database context</param>
+        </member>
+        <member name="P:IO.Swagger.Models.DbTestContext.Vehicles">
+            <summary>
+            Used to get the list of vehicles
+            </summary>
+        </member>
+        <member name="T:IO.Swagger.Models.Vehicle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.Vehicle.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.Vehicle.#ctor(System.Nullable{System.Int32},System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IO.Swagger.Models.Vehicle" /> class.
+            </summary>
+            <param name="VehicleId">VehicleId.</param>
+            <param name="Description">Description.</param>
+            <param name="DisplayName">DisplayName.</param>
+        </member>
+        <member name="P:IO.Swagger.Models.Vehicle.VehicleId">
+            <summary>
+            Gets or Sets VehicleId
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Vehicle.Description">
+            <summary>
+            Gets or Sets Description
+            </summary>
+        </member>
+        <member name="P:IO.Swagger.Models.Vehicle.DisplayName">
+            <summary>
+            Gets or Sets DisplayName
+            </summary>
+        </member>
+        <member name="M:IO.Swagger.Models.Vehicle.ToString">
+            <summary>
+            Returns the string presentation of the object
+            </summary>
+            <returns>String presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Vehicle.ToJson">
+            <summary>
+            Returns the JSON string presentation of the object
+            </summary>
+            <returns>JSON string presentation of the object</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Vehicle.Equals(System.Object)">
+            <summary>
+            Returns true if objects are equal
+            </summary>
+            <param name="obj">Object to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Vehicle.Equals(IO.Swagger.Models.Vehicle)">
+            <summary>
+            Returns true if Vehicle instances are equal
+            </summary>
+            <param name="other">Instance of Vehicle to be compared</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.Vehicle.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="M:IO.Swagger.Models.XMLDocumentationReader.#ctor(System.String)">
+            <summary>
+            Creates a reader from a path
+            </summary>
+            <param name="xmlPath"></param>
+        </member>
+        <member name="M:IO.Swagger.Models.XMLDocumentationReader.GetCommentsForResource(System.String,IO.Swagger.Models.XmlResourceType)">
+            <summary>
+            Retrievethe XML comments documentation for a given resource
+            Eg. ITN.Data.Models.Entity.TestObject.MethodName
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IO.Swagger.Models.XMLDocumentationReader.GetCommentsForResource(System.Type)">
+            <summary>
+            Retrievethe XML comments documentation for a given resource
+            Eg. ITN.Data.Models.Entity.TestObject.MethodName
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IO.Swagger.Models.XMLDocumentationReader.GetCommentsForResource(System.Type,System.String,IO.Swagger.Models.XmlResourceType)">
+            <summary>
+            Retrievethe XML comments documentation for a given resource
+            </summary>
+            <param name="objectType">The type of class to retrieve documenation on</param>
+            <param name="propertyName">The name of the property in the specified class</param>
+            <param name="resourceType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

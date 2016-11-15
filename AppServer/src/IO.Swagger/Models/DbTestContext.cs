@@ -31,10 +31,7 @@ namespace IO.Swagger.Models
         /// <param name="options">Options for the database context</param>
         public DbTestContext(DbContextOptions<DbTestContext> options)
                 : base(options)
-            {
-           
-
-        }
+        { }
 
         /// <summary>
         /// Used to get the list of vehicles

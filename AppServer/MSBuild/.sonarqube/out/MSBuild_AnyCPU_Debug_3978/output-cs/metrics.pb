@@ -1,0 +1,9 @@
+¶
+TC:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\..\src\IO.Swagger\Startup.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=2;2=2;4=0;6=0;8=0;10=0;12=0jKLMNRTU^wÉrp !"#$%&')*+,-/123456789:;<=>?@ABCDEHOPWXYZ_`acefghijklnpqrstxyz{}~ÄÅÇÑÖÜáàâäãçéêëíìî∆
+TC:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\..\src\IO.Swagger\Program.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=1;4=0;6=0;8=0;10=0;12=0r
+ !ˆ
+[C:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\..\src\IO.Swagger\Models\Vehicle.cs% (08%@%H%R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=12;2=0;4=1;6=1;8=0;10=0;12=1j4#%)*+345678ABCGHINOPUVWXdefgmnopqz{|}~óòôöùû°ré!"&'(,-./029:;<=?DEJLQRYZ[\]^_`abhijkrstuvwxÄÇÉÖÜáàâäãåçéèêëíìîïõúûü†¢£§•¶ß®©™ÆØ∞±≥¥µ∂∫ª÷
+aC:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\..\src\IO.Swagger\Models\DbTestContext.cs (8@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=3;2=0;4=0;6=0;8=0;10=0;12=0j"#$')r
+ %-.ó
+cC:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\..\src\IO.Swagger\Controllers\VehicleApi.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=3;2=1;4=0;6=0;8=0;10=0;12=0j').07@ABOTirR !"#%&*+,234589:;<=>DFGIJKLMNPSTVWXY[]^`acdefhjknopqrstuvwxyz{|}~ÅÇÉÑè
+bC:\Users\georg\Source\Repos\nov16test\AppServer\MSBuild\..\src\IO.Swagger\Controllers\ValuesApi.cs	 (8@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=3;2=2;4=0;6=0;8=0;10=0;12=0j&(,.01;=?@PRTUV`bdtvxyrB !"$%)*2345678ABCDEFGIJKLMWXYZ[\]efghijkmnopqz{|}~ÄÅÇ
